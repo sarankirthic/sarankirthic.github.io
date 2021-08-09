@@ -2,10 +2,44 @@ body {
   background-color: black;
   color: #1DD2EE;
   font-family: monospace;
+  font-size: 15px;
 }
 .output {
   color: white;
 }
 .active:after {
   content: '_';
+}
+article {
+  float:  left;
+}
+header {
+  text-align: left;
+  padding: 10px;
+  padding-left: 0px;
+  margin: 10px;
+  margin-left: 0px;
+  font-size: 20px;
+}
+nav {
+  float: left;
+  padding-right: 50px;
+  padding-left: 0px;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #1DD2EE;
+}
+a:active {
+  color: #1DD2EE;
+}
+ul {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+li {
+  list-style-type: none;
+  text-align: left;
 }
