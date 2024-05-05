@@ -1,0 +1,11 @@
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul li::before {
+	content: "• "; /* Bullet character */
+	color: #7460E0; /* Color of the bullet */
+	font-size: 1.2em; /* Adjust size if needed */
+	margin-right: 0.5em; /* Spacing between bullet and text */
+}
