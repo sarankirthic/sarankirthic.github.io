@@ -1,21 +1,24 @@
-// Get the current page URL
-const currentPage = window.location.pathname;
-const pageNames = {
-	'/': 'home',
-	'/about/about.html': 'about',
-};
-
-// Function to generate breadcrumbs
-function generateCoffee() {
-	const coffeeContainer = document.querySelector('.coffeespill');
-	const pathSegments = currentPage.split('/').filter(
-			segment => segment !== '');  // Split the URL and remove empty segments
-
-	let coffeeStain = '<a href="/">home</a>';
-	
-
-	coffeeContainer.innerHTML = coffeeStain;
+function loadPage(page) {
+  fetch(`/pages/${page}.html`)
+    .then(response => {
+      if (!response.ok) throw new Error('Page not found');
+      return response.text();
+    })
+    .then(data => {
+		console.log(data)
+		document.getElementById('content').innerHTML = data;
+    })
+    .catch(error => {
+      document.getElementById('content').innerHTML = `<h2>Error: ${error.message}</h2>`;
+    });
 }
 
-// Call the function to generate coffee
-generateCoffee();
+document.querySelectorAll('header a').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    const page = event.target.dataset.page;
+    loadPage(page);
+  });
+});
+
+// loadPage('home');

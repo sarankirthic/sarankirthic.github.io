@@ -1,2 +1,5 @@
 .DS_Store
-script.js
+.idea
+Pipfile
+
+venv

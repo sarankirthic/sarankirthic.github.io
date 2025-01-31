@@ -1,45 +1,24 @@
-/* Define Space Mono font styles */
-@font-face {
-    font-family: "Space Mono";
-    font-style: normal;
-    font-weight: 400;
-    src:
-        local("Space Mono Regular"),
-        local("SpaceMono-Regular"),
-        url(path/to/space-mono-regular.woff2) format("woff2");
-}
-
-@font-face {
-    font-family: "Space Mono";
-    font-style: normal;
-    font-weight: 700;
-    src:
-        local("Space Mono Bold"),
-        local("SpaceMono-Bold"),
-        url(path/to/space-mono-bold.woff2) format("woff2");
-}
-
-/* Apply Space Mono font to specific classes */
-.space-mono-regular {
-    font-family: "Space Mono", monospace;
+/* Apply Helvetica font to specific classes */
+.helvetica-regular {
+    font-family: "Helvetica", monospace;
     font-weight: 400;
     font-style: normal;
 }
 
-.space-mono-bold {
-    font-family: "Space Mono", monospace;
+.helvetica-bold {
+    font-family: "Helvetica", monospace;
     font-weight: 700;
     font-style: normal;
 }
 
-.space-mono-regular-italic {
-    font-family: "Space Mono", monospace;
+.helvetica-regular-italic {
+    font-family: "Helvetica", monospace;
     font-weight: 400;
     font-style: italic;
 }
 
-.space-mono-bold-italic {
-    font-family: "Space Mono", monospace;
+.helvetica-bold-italic {
+    font-family: "Helvetica", monospace;
     font-weight: 700;
     font-style: italic;
 }
@@ -56,7 +35,7 @@ body {
     overflow-x: hidden;
     background-color: black;
     color: white;
-    font-family: "Space Mono", monospace;
+    font-family: "Helvetica", monospace;
     font-weight: 300;
     font-style: normal;
     display: flex;
@@ -88,9 +67,22 @@ header a {
     font-weight: bold;
     display: inline-block;
     overflow-wrap: break-word;
-    font-family: "Space Mono";
+    font-family: "Helvetica";
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul li::before {
+	content: "• "; /* Bullet character */
+	color: #7460E0; /* Color of the bullet */
+	font-size: 1.2em; /* Adjust size if needed */
+	margin-right: 0.5em; /* Spacing between bullet and text */
 }
 
 main {
@@ -109,10 +101,16 @@ h1 span {
 .sarankirthic {
     display: inline-block;
     overflow-wrap: break-word;
-    font-family: "Space Mono";
-    font-weight: 700;
-    font-size: 20px;
+    font-family: "Helvetica";
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    font-size: 35px;
     color: #ffffff;
+}
+
+.sarankirthic a {
+    text-decoration: none;
+    color: white;
 }
 
 .coffeespill {
