@@ -1,30 +1,30 @@
 /* Apply Helvetica font to specific classes */
 .helvetica-regular {
-    font-family: "Helvetica", monospace;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: 400;
     font-style: normal;
 }
 
 .helvetica-bold {
-    font-family: "Helvetica", monospace;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: 700;
     font-style: normal;
 }
 
 .helvetica-regular-italic {
-    font-family: "Helvetica", monospace;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: 400;
     font-style: italic;
 }
 
 .helvetica-bold-italic {
-    font-family: "Helvetica", monospace;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: 700;
     font-style: italic;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 70%;
     width: 100%;
     padding: 1em;
     padding-top: 10px;
@@ -35,7 +35,7 @@ body {
     overflow-x: hidden;
     background-color: black;
     color: white;
-    font-family: "Helvetica", monospace;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: 300;
     font-style: normal;
     display: flex;
@@ -43,11 +43,13 @@ body {
     height: 100vh;
     margin: 0;
     padding-top: 7em;
-    padding-left: 17em;
+    padding-left: 15%;
 }
 
 p {
+    font-size: 20px;
     line-height: 1.5;
+    width: 100%;
 }
 
 header {
@@ -67,7 +69,7 @@ header a {
     font-weight: bold;
     display: inline-block;
     overflow-wrap: break-word;
-    font-family: "Helvetica";
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 20px;
     padding-left: 0px;
@@ -81,7 +83,7 @@ ul {
 ul li::before {
 	content: "• "; /* Bullet character */
 	color: #7460E0; /* Color of the bullet */
-	font-size: 1.2em; /* Adjust size if needed */
+	font-size: 1.5em; /* Adjust size if needed */
 	margin-right: 0.5em; /* Spacing between bullet and text */
 }
 
@@ -98,49 +100,39 @@ h1 span {
     font-size: 0.9em;
 }
 
+.site-name {
+    border-bottom: 1px solid #ccc;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 3.5em;
+    line-height: .7em;
+    margin-top: .15em;
+    width: 100%;
+}
+
 .sarankirthic {
     display: inline-block;
     overflow-wrap: break-word;
-    font-family: "Helvetica";
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 900;
     letter-spacing: 0.02em;
-    font-size: 35px;
+    font-size: 50px;
     color: #ffffff;
+}
+
+.content {
+    font-size: 20px;
 }
 
 .sarankirthic a {
     text-decoration: none;
-    color: white;
-}
-
-.coffeespill {
-    background-color: #000000;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.coffeespill a {
-    text-decoration: none;
-    color: #333;
-}
-
-.coffeespill a:hover {
-    text-decoration: underline;
-}
-
-.coffeespill {
-    color: #7460e0;
-}
-
-.coffeespill a {
-    color: #7460e0;
+    color: #ffffff;
 }
 
 .social {
     color: white;
     cursor: pointer;
     padding-top: 2em;
-    font-size: 0.8em;
+    font-size: 1em;
     text-decoration: underline;
     text-decoration-thickness: 0.2px;
     text-decoration-color: #ffffff;
