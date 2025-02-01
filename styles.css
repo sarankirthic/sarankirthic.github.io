@@ -1,36 +1,9 @@
-/* Apply Helvetica font to specific classes */
-.helvetica-regular {
-    font-family: Helvetica, Arial, sans-serif, monospace;
-    font-weight: 400;
-    font-style: normal;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
-.helvetica-bold {
-    font-family: Helvetica, Arial, sans-serif, monospace;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.helvetica-regular-italic {
-    font-family: Helvetica, Arial, sans-serif, monospace;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.helvetica-bold-italic {
-    font-family: Helvetica, Arial, sans-serif, monospace;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.container {
-    max-width: 100%;
-    width: 100%;
-    padding: 1em;
-    padding-top: 10px;
-}
-
-/* General styling */
 body {
     overflow-x: hidden;
     background-color: black;
@@ -47,12 +20,6 @@ body {
     width: 70%
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-}
-
 p {
     font-size: 20px;
     line-height: 1.5;
@@ -63,17 +30,13 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 1em 10em;
+    padding: 1em 0em;
     margin-bottom: 5px;
     padding-left: 0px;
 }
 
-.coffeespill {
-
-}
-
 header a {
-    color: #007cab;
+    color: #6800c0;
     text-decoration: none;
     margin: 0 0.5em;
     font-size: 1em;
@@ -92,23 +55,17 @@ ul {
 }
 
 ul li::before {
-	content: "• "; /* Bullet character */
-	color: #7460E0; /* Color of the bullet */
-	font-size: 1.5em; /* Adjust size if needed */
-	margin-right: 0.5em; /* Spacing between bullet and text */
+	content: "• ";
+	color: #6800c0;
+	font-size: 1.5em;
+	margin-right: 0.5em;
 }
 
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 0.8em;
-}
-
-h1 span {
-    color: #b36fff;
-    font-size: 0.9em;
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 1em;
+    padding-top: 10px;
 }
 
 .site-name {
@@ -126,7 +83,7 @@ h1 span {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 900;
     letter-spacing: 0.02em;
-    font-size: 50px;
+    font-size: 80%;
     color: #ffffff;
 }
 
@@ -152,91 +109,11 @@ h1 span {
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 5em; /* Adjust padding to prevent content from hiding behind the fixed header */
-    }
-
-    header {
-        flex-direction: column;
-        align-items: left;
-    }
-
-    header a {
-        color: #007cab;
-        text-decoration: none;
-        margin: 0 0.5em;
-        font-size: 1em;
-        font-weight: bold;
-        display: inline-block;
-        overflow-wrap: break-word;
-        font-family: Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        padding-left: 0px;
-    }
-
-    .sarankirthic {
-        font-size: 28px; /* Smaller font size for logo */
-        text-align: center;
-    }
-
-    #content {
-        padding: 0.5em;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 1em;
-    }
-}
-
-.toggle-menu {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     color: white;
-    position: absolute;
-    right: 1em;
-    top: 0.8em;
-}
-
-.coffeespill {
-    display: flex;
-    gap: 1em;
-}
-
-/* Mobile Navigation (Hidden by Default) */
-@media (max-width: 768px) {
-    .toggle-menu {
-        display: block;
-    }
-
-    .coffeespill {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 3em;
-        right: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .coffeespill.active {
-        display: flex;
-    }
-
-    .coffeespill a {
-        padding: 1em;
-        display: block;
-    }
+    text-align: center;
+    padding-bottom: 1em;
 }
