@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    padding-top: 7em;
+    padding-top: 5%;
     padding-left: 15%;
     width: 70%
 }
@@ -39,14 +39,12 @@ header a {
     color: #6800c0;
     text-decoration: none;
     margin: 0 0.5em;
-    font-size: 1em;
+    font-size: 20px;
     font-weight: bold;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 ul {
@@ -87,13 +85,13 @@ ul li::before {
     color: #ffffff;
 }
 
-.content {
-    font-size: 20px;
-}
-
 .sarankirthic a {
     text-decoration: none;
     color: #ffffff;
+}
+
+.content {
+    font-size: 20px;
 }
 
 .social {
