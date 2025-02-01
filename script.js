@@ -33,3 +33,15 @@ window.addEventListener('popstate', () => {
 // Load the correct page on initial load
 const initialPage = window.location.hash.replace('#', '') || 'home';
 loadPage(initialPage);
+
+// Toggle mobile menu
+function toggleMenu() {
+    document.querySelector('.coffeespill').classList.toggle('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.coffeespill a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.coffeespill').classList.remove('active');
+    });
+});

@@ -24,7 +24,7 @@
 }
 
 .container {
-    max-width: 70%;
+    max-width: 100%;
     width: 100%;
     padding: 1em;
     padding-top: 10px;
@@ -40,10 +40,17 @@ body {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding-top: 7em;
     padding-left: 15%;
+    width: 70%
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 p {
@@ -61,8 +68,12 @@ header {
     padding-left: 0px;
 }
 
+.coffeespill {
+
+}
+
 header a {
-    color: #7460e0;
+    color: #007cab;
     text-decoration: none;
     margin: 0 0.5em;
     font-size: 1em;
@@ -138,4 +149,94 @@ h1 span {
     text-decoration-color: #ffffff;
     text-decoration-style: solid;
     text-underline-offset: 2px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 5em; /* Adjust padding to prevent content from hiding behind the fixed header */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    header a {
+        color: #007cab;
+        text-decoration: none;
+        margin: 0 0.5em;
+        font-size: 1em;
+        font-weight: bold;
+        display: inline-block;
+        overflow-wrap: break-word;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    .sarankirthic {
+        font-size: 28px; /* Smaller font size for logo */
+        text-align: center;
+    }
+
+    #content {
+        padding: 0.5em;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+.toggle-menu {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 1em;
+    top: 0.8em;
+}
+
+.coffeespill {
+    display: flex;
+    gap: 1em;
+}
+
+/* Mobile Navigation (Hidden by Default) */
+@media (max-width: 768px) {
+    .toggle-menu {
+        display: block;
+    }
+
+    .coffeespill {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 3em;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .coffeespill.active {
+        display: flex;
+    }
+
+    .coffeespill a {
+        padding: 1em;
+        display: block;
+    }
 }
