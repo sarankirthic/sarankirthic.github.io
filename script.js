@@ -16,7 +16,7 @@ function loadPage(page) {
 }
 
 // Handle navigation link clicks
-document.querySelectorAll('div,header a').forEach(link => {
+document.querySelectorAll('header a').forEach(link => {
   link.addEventListener('click', event => {
     event.preventDefault();
     const page = event.target.dataset.page;
