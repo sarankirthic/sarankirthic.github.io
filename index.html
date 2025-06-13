@@ -28,20 +28,11 @@
 			</div>
 		</div>
 	</body>
+	<div class="temporary" style="text-align: center;">
+		<p id="ip-address">Fetching IP address...</p>
+	</div>
+	<script src="ip.js"></script>
 	<div class="footer">
-		<p id="ip-address"></p>
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				fetch("https://api.ipify.org?format=json")
-						.then(response => response.json())
-						.then(data => {
-							document.getElementById('ip-address').textContent = data.ip;
-						})
-						.catch(error => {
-							console.error("Error fetching IP address:", error);
-						});
-			});
-		</script>
 		© 2025 sarankirthic.net
 	</div>
 </html>
