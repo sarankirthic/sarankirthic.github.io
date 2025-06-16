@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>sarankirthic | my site</title>
 		<link rel="icon" type="image/jpeg" href="images/sarankirthic.jpg">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="pages/css/contact.css">
 	</head>
 	<body>
 		<div class="container">
@@ -18,9 +19,10 @@
 				<a href="#" data-page="home" style="margin-left: 0">home</a>
 				<a href="#" data-page="art">art</a>
 				<a href="#" data-page="about">about</a>
+				<a href="#" data-page="contact">contact</a>
 			</header>
 			<div id="content">Loading...</div>
-			<script src="script.js"></script>
+			<script src="js/script.js"></script>
 			<div>
 				<span class="social" onclick="window.location.href='https://linkedin.com/in/sarankirthic-sp'">linkedin</span>
 				<span class="social" onclick="window.location.href='https://github.com/sarankirthic'">github</span>
@@ -28,11 +30,13 @@
 			</div>
 		</div>
 	</body>
-	<div class="temporary" style="text-align: center;">
-		<p id="ip-address">Fetching IP address...</p>
-	</div>
-	<script src="ip.js"></script>
+	<div id="ip-address" class="footer" style="padding-bottom: 10px; display: flex;"></div>
 	<div class="footer">
 		© 2025 sarankirthic.net
 	</div>
 </html>
+<script>
+	fetch('https://api.ipify.org/?format=json')
+			.then(results => results.json())
+			.then(data => console.log(data.ip));
+</script>
