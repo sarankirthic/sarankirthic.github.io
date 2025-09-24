@@ -24,6 +24,11 @@ document.querySelectorAll('header a[data-page]').forEach(link => {
     });
 });
 
+document.getElementById('resume-link').addEventListener('click', event => {
+    const url = 'documents/sarankirthic.pdf';
+    window.open(url, '_blank');
+})
+
 // Handle back/forward navigation
 window.addEventListener('popstate', () => {
     const page = window.location.hash.replace('#', '') || 'home';

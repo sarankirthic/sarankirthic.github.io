@@ -51,6 +51,18 @@ header a {
     padding-left: 0;
 }
 
+header span {
+    color: #6800c0;
+    text-decoration: none;
+    margin: 0 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-left: 0;
+}
+
 ul {
 	list-style-type: none;
 	padding-left: 0;
