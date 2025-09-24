@@ -1,11 +1,34 @@
-function handleForm(event) {
-    event.preventDefault(); // Prevent the default form submission
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
-    const data = new FormData(event.target);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Script loaded");
+    emailjs.init(EMAILJS_PUBLIC_KEY);
 
-    const formJSON = Object.fromEntries(data.entries());
-    const result = document.querySelector('')
-}
+    const form = document.getElementById('contact-me');
+    const submitBtn = form.querySelector('.submit-btn');
 
-const form = document.querySelector('form');
-form.addEventListener('abort', handleForm);
+    form.addEventListener('input', () => {
+        submitBtn.disabled = !form.checkValidity();
+    });
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log("Form submitted");
+
+        let CONTACT_FORM = document.getElementById('contact-me');
+        emailjs.sendForm(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            CONTACT_FORM,
+        ).then(function() {
+            alert('Email sent successfully!');
+            form.reset();
+            submitBtn.disabled = true;
+        }, function(error) {
+            alert('Failed to send email. Please try again later.');
+            console.error('EmailJS error:', error);
+        });
+    });
+});
