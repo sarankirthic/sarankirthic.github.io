@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
-from flask_mail import Mail, Message
+from waitress import serve
+# from flask_mail import Mail, Message
 # from config import Config
 
 app = Flask(__name__)
@@ -61,4 +62,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    serve(app, host='0.0.0.0', port=8080)
