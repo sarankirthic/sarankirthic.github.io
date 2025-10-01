@@ -11,3 +11,6 @@ package-lock.json
 config.py
 __pycache__/
 .vercel
+
+pyproject.toml
+setup.py
