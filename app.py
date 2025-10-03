@@ -11,7 +11,7 @@ app.config.from_object(Config)
 
 load_dotenv()
 
-app.secret_key = Config.SECRET_KEY
+app.config['SECRET_KEY'] = Config.SECRET_KEY
 
 app.config['RECAPTCHA_PUBLIC_KEY'] = Config.RECAPTCHA_SITE_KEY
 app.config['RECAPTCHA_PRIVATE_KEY'] = Config.RECAPTCHA_SITE_SECRET
