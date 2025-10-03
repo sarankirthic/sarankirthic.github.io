@@ -14,10 +14,10 @@
         </div>
         <header>
             <a href="{{ url_for('home') }}" style="margin-left: 0">home</a>
-            <a href="{{ url_for('art') }}">art</a>
             <a href="{{ url_for('projects') }}">projects</a>
             <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}">resume</a>
             <a href="{{ url_for('about') }}">about</a>
+            <a href="{{url_for('contact') }}">contact</a>
         </header>
         <div class="content">
             {% block content %}
@@ -26,7 +26,7 @@
         <div>
             <span class="social" onclick="window.location.href='https://linkedin.com/in/sarankirthic-sp'">linkedin</span>
             <span class="social" onclick="window.location.href='https://github.com/sarankirthic'">github</span>
-            <span class="social" onclick="window.location.href='mailto:spskartist@gmail.com'">email</span>
+            <span class="social" onclick="window.location.href='mailto:sarankirthic@gmail.com'">email</span>
         </div>
     </div>
 </body>
