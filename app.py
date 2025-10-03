@@ -3,9 +3,13 @@ from waitress import serve
 from flask_mail import Mail, Message
 from forms import ContactForm
 from config import Config
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
+load_dotenv()
 
 app.secret_key = Config.SECRET_KEY
 
