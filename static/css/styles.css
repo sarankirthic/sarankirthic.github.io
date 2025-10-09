@@ -51,6 +51,11 @@ header a {
     padding-left: 0;
 }
 
+header .button-group {
+    margin-left: auto;
+    align-self: center;
+}
+
 header span {
     color: #6800c0;
     text-decoration: none;

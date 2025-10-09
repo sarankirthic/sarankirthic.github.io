@@ -6,6 +6,7 @@
     <title>sarankirthic | my site</title>
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/sarankirthic.jpg') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/light.css') }}">
 </head>
 <body>
     <div class="container">
@@ -18,6 +19,18 @@
             <a href="{{ url_for('projects') }}">projects</a>
             <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}">resume</a>
             <a href="{{ url_for('about') }}">about</a>
+            <fieldset class="button-group">
+<!--                <label for="light">Light</label>-->
+                <div class="track">
+                    <div class="handle">
+                        <div class="icon"></div>
+                        <div class="state"></div>
+                    </div>
+                    <input id="light" type="radio" checked="checked" name="light-dark-mode"/>
+                    <input id="dark" type="radio" name="light-dark-mode"/>
+                </div>
+<!--                <label for="dark">Dark</label>-->
+            </fieldset>
         </header>
         <div class="content">
             {% block content %}
