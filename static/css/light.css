@@ -1,0 +1,184 @@
+:root {
+    --surface: #f7f2fa;
+    --on-surface: #1a1a1a;
+    --focus: blue;
+    --track: #76ace5;
+    --handle: #ffde70;
+}
+
+html:has(#dark:checked) {
+    --surface: #141314;
+    --on-surface: #f1f1f1;
+    --focus: yellow;
+    --track: #6800c0;
+    --handle: #fff;
+}
+
+body {
+    /*width: 100vw;*/
+    min-height: 100vh;
+    /*display: grid;*/
+    /*place-items: center;*/
+    background-color: var(--surface);
+    color: var(--on-surface);
+    transition: background-color 0.15s ease-in-out;
+}
+
+label {
+    transition: color 0.15s ease-in-out;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    margin: 0rem 1rem 0rem 0rem;
+    padding: 0;
+    border: none;
+}
+
+.button-group .track {
+    --bg: var(--track);
+    --fg: var(--handle);
+    --hl: var(--focus);
+    --bor: var(--fg);
+    position: relative;
+    box-sizing: border-box;
+    width: 3.25rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-property: background-color, border;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    margin: 0 4px;
+}
+
+.button-group input[type=radio] {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.button-group input[type=radio]:not(:checked) {
+    z-index: 1;
+}
+
+.button-group input[type=radio]:focus {
+    outline: none;
+}
+
+.button-group .handle {
+    position: absolute;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    left: var(--handle-pos, 0);
+    transition: left 0.35s cubic-bezier(0.47, 1.5, 0.41, 0.8);
+}
+
+.button-group .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    background-color: var(--fg);
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.button-group .icon::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--bg);
+    position: absolute;
+    top: 0.05rem;
+    right: -0.15rem;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}
+
+.button-group:has(#dark:checked) .handle {
+    left: 1.25rem;
+}
+
+.button-group:has(#dark:checked) .icon::before {
+    opacity: 1;
+}
+
+.button-group .state {
+    height: 100%;
+    width: 100%;
+    opacity: var(--state-op, 0);
+    background-color: var(--fg);
+    transition: opacity 0.15s ease-in-out;
+    border-radius: 50%;
+    scale: 1.4;
+}
+
+.button-group:hover {
+    --state-op: 0.1;
+}
+
+.button-group:active {
+    --state-op: 0.2;
+}
+
+.button-group:has(input:focus-visible) .handle {
+    outline: 3px solid var(--focus);
+    box-shadow: 0 0 0 3px var(--surface);
+    outline-offset: 3px;
+}
+
+.button-group:has(#dark:checked) label:first-of-type, .button-group:has(#light:checked) label:last-of-type {
+    opacity: 0.5;
+}
+
+.social {
+    color: var(--on-surface);
+    text-decoration-color: var(--on-surface);
+}
+
+.site-name,
+.sarankirthic,
+.sarankirthic a {
+    color: var(--on-surface);
+    opacity: 0.95;
+    transition: color 0.15s ease-in-out;
+}
+
+header a {
+    color: var(--track);
+    text-decoration: none;
+    margin: 0 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-left: 0;
+    transition: color 0.15s ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "• ";
+    color: var(--track); /* Use the CSS variable for dynamic color */
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
