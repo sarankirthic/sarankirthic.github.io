@@ -1,44 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" >
-	<head>
-	<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>sarankirthic | my site</title>
-		<link rel="icon" type="image/jpeg" href="images/sarankirthic.jpg">
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/contact.css">
-	</head>
-	<body>
-		<div class="container">
-			<div class="site-name">
-				<div class="sarankirthic">
-					<a href="#" data-page="home">sarankirthic sp</a>
-				</div>
-			</div>
-			<header>
-				<a href="#" data-page="home" style="margin-left: 0">home</a>
-				<a href="#" data-page="art">art</a>
-				<a href="#" data-page="project">projects</a>
-				<a href="#" data-page="about">about</a>
-<!--				<span id="resume-link">resume</span>-->
-<!--				<a href="#" data-page="contact">contact</a>-->
-			</header>
-			<div id="content">Loading...</div>
-			<script src="js/script.js"></script>
-			<div>
-				<span class="social" onclick="window.location.href='https://linkedin.com/in/sarankirthic-sp'">linkedin</span>
-				<span class="social" onclick="window.location.href='https://github.com/sarankirthic'">github</span>
-				<span class="social" onclick="window.location.href='mailto:spskartist@gmail.com'">email</span>
-			</div>
-		</div>
-	</body>
-	<div id="ip-address" class="footer" style="padding-bottom: 10px; display: flex;"></div>
-	<div class="footer">
-		© 2025 sarankirthic.net
-	</div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Electric Border</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/jpeg" href="images/sarankirthic.jpg">
+</head>
+
+<body>
+<main class="main-container">
+    <svg class="svg-container">
+        <defs>
+            <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+                <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+                    <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+                <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+                    <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+                <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+                    <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+                <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+                    <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+
+                <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+                <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+                <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+
+                <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="card-container">
+        <div class="inner-container">
+            <div class="border-outer">
+                <div class="main-card"></div>
+            </div>
+            <div class="glow-layer-1"></div>
+            <div class="glow-layer-2"></div>
+        </div>
+
+        <div class="overlay-1"></div>
+        <div class="overlay-2"></div>
+        <div class="background-glow"></div>
+
+        <div class="content-container">
+            <div class="content-top">
+                <div class="scrollbar-glass">
+                    Software Engineer
+                </div>
+                <p class="title">Sarankirthic SP</p>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="content-bottom">
+                <p class="description">Transforming complex problems into elegant, efficient, and scalable software solutions.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+
 </html>
-<!--<script>-->
-<!--	fetch('https://api.ipify.org/?format=json')-->
-<!--			.then(results => results.json())-->
-<!--			.then(data => console.log(data.ip));-->
-<!--</script>-->
