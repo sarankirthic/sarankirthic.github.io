@@ -8,3 +8,9 @@ package.json
 .env
 node_modules
 package-lock.json
+config.py
+__pycache__/
+.vercel
+
+pyproject.toml
+setup.py

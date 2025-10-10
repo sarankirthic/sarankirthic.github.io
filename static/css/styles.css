@@ -28,6 +28,7 @@ p {
     line-height: 1.5;
     width: 100%;
     padding-right:0;
+    padding-top: 0;
 }
 
 header {
@@ -49,6 +50,11 @@ header a {
     overflow-wrap: break-word;
     font-family: Helvetica, Arial, sans-serif;
     padding-left: 0;
+}
+
+header .button-group {
+    margin-left: auto;
+    align-self: center;
 }
 
 header span {

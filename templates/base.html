@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sarankirthic | my site</title>
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/sarankirthic.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/light.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="site-name">
+            <div class="sarankirthic"><a href="{{ url_for('home') }}">sarankirthic sp</a></div>
+        </div>
+        <header>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav id="site-nav" class="nav">
+                <a href="{{ url_for('home') }}" style="margin-left: 0">home</a>
+                <a href="{{ url_for('art') }}">art</a>
+                <a href="{{ url_for('projects') }}">projects</a>
+                <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}">resume</a>
+                <a href="{{ url_for('about') }}">about</a>
+            </nav>
+            <fieldset class="button-group">
+                <div class="track">
+                    <div class="handle">
+                        <div class="icon"></div>
+                        <div class="state"></div>
+                    </div>
+                    <input id="light" type="radio" checked="checked" name="light-dark-mode"/>
+                    <input id="dark" type="radio" name="light-dark-mode"/>
+                </div>
+            </fieldset>
+        </header>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div>
+            <span class="social" onclick="window.location.href='https://linkedin.com/in/sarankirthic-sp'">linkedin</span>
+            <span class="social" onclick="window.location.href='https://github.com/sarankirthic'">github</span>
+            <span class="social" onclick="window.location.href='mailto:spskartist@gmail.com'">email</span>
+            <span class="social" onclick="window.location.href='https://bsky.app/profile/sarankirthic.bsky.social'">bsky</span>
+        </div>
+    </div>
+</body>
+</html>
