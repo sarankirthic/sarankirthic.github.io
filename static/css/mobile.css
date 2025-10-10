@@ -71,7 +71,7 @@
 
     .nav a {
         padding: 10px 6px;
-        font-size: 1.05rem;
+        font-size: 20px;
         text-decoration: none;
         color: inherit;
     }
@@ -87,7 +87,6 @@
         z-index: 999;
     }
 
-    /* Checkbox checked: open panel and show overlay */
     .nav-toggle:checked ~ .nav {
         transform: translateX(0%);
     }
@@ -105,9 +104,4 @@
         opacity: 1;
         pointer-events: auto;
     }
-}
-
-:root {
-    --sidebar-bg: #0f0f10;
-    --sidebar-fg: #f7f7f7;
 }
