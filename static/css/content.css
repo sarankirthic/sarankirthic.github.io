@@ -1,0 +1,25 @@
+:root {
+    --content-background: black;
+}
+
+.content-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1vh;
+    background-color: var(--content-background);
+    color: rgb(74 222 128);
+    border-bottom: 1px solid var(--border-color);
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .content-container {
+        padding: 15px;
+        gap: 10px;
+    }
+}

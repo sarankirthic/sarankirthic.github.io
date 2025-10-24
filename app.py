@@ -27,6 +27,11 @@ def about():
     return render_template('about.html', title='About')
 
 
+@app.route('/testing')
+def testing():
+    return render_template('index.html', title='Testing')
+
+
 # mail = Mail(app)
 #
 # @app.route('/contact')
