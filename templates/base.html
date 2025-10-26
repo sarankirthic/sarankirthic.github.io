@@ -1,54 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sarankirthic | my site</title>
     <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/sarankirthic.jpg') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/light.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Sarankirthic SP | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styless.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="site-name">
-            <div class="sarankirthic"><a href="{{ url_for('home') }}">sarankirthic sp</a></div>
-        </div>
-        <header>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-            <label for="nav-toggle" class="hamburger" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav id="site-nav" class="nav">
-                <a href="{{ url_for('home') }}" style="margin-left: 0">home</a>
-                <a href="{{ url_for('art') }}">art</a>
-                <a href="{{ url_for('projects') }}">projects</a>
-                <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}">resume</a>
-                <a href="{{ url_for('about') }}">about</a>
-            </nav>
-            <fieldset class="button-group">
-                <div class="track">
-                    <div class="handle">
-                        <div class="icon"></div>
-                        <div class="state"></div>
-                    </div>
-                    <input id="light" type="radio" checked="checked" name="light-dark-mode"/>
-                    <input id="dark" type="radio" name="light-dark-mode"/>
+<body class="bg-cream">
+    <header class="container mx-auto pt-5 pb-2 py-10">
+
+        <!-- Sarankirthic Section -->
+        <div class="max-w-4xl mx-auto">
+             <div class="flex justify-between items-center mb-5">
+                <div>
+                    <p class="text-gray-600 mb-2 text-lg inconsolata-hero hero-intro">Hi, my name is</p>
+                    <h1 class="hero-sarankirthic text-2xl font-semibold text-charcoal">Sarankirthic SP</h1>
                 </div>
-            </fieldset>
-        </header>
-        <div class="content">
-            {% block content %}
-            {% endblock %}
+<!--                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">-->
+<!--                    <i class="fas fa-moon text-charcoal"></i>-->
+<!--                </button>-->
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="https://github.com/sarankirthic" target="_blank" class="link-github hover:bg-black hover:text-white px-2 py-1 transition-all">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/sarankirthic-sp" target="_blank" class="link-linkedin hover:text-white px-2 py-1 transition-all">
+                    LinkedIn
+                </a>
+                <a href="https://leetcode.com/sarankirthic" target="_blank" class="link-leetcode hover:bg-black hover:text-white px-2 py-1 transition-all">
+                    Leetcode
+                </a>
+                <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}" target="_blank" class="link-resume hover:text-white px-2 py-1 transition-all">
+                    Resume
+                </a>
+            </div>
+            <p class="sarankirthic text-xl mt-5 text-gray-700 mb-0 leading-relaxed max-w-4xl inconsolata-hero">
+                A passionate software engineer specializing in building scalable applications and delivering real-time business solutions.
+                I thrive in collaborative environments and excel at solving complex problems with elegant, efficient code.
+            </p>
+            <hr class="mt-6 mb-6 border-black">
         </div>
-        <div>
-            <span class="social" onclick="window.location.href='https://linkedin.com/in/sarankirthic-sp'">linkedin</span>
-            <span class="social" onclick="window.location.href='https://github.com/sarankirthic'">github</span>
-            <span class="social" onclick="window.location.href='mailto:spskartist@gmail.com'">email</span>
-            <span class="social" onclick="window.location.href='https://bsky.app/profile/sarankirthic.bsky.social'">bsky</span>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="pt-0 pb-5 max-w-4xl mx-auto mb-0">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-charcoal mb-5 inconsolata-title">Featured Projects</h2>
+            <div class="space-y-4">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project1')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>Data Analytics Platform</span>
+                                <a href="https://github.com/sarankirthic/data-analytics" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">End-to-end data pipeline with real-time analytics and visualization</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project1"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project1">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Apache Spark</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project2')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>E-Commerce Platform</span>
+                                <a href="https://github.com/sarankirthic/ecommerce" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">Full-stack e-commerce solution with secure payment integration</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project2"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project2">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">Spring Boot</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Redis</span>
+                                <span class="tech-badge">Stripe API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project3')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>Learning Management System</span>
+                                <a href="https://github.com/sarankirthic/lms" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">Comprehensive LMS with role-based access and progress tracking</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project3"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project3">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">Java</span>
+                                <span class="tech-badge">Spring Boot</span>
+                                <span class="tech-badge">Thymeleaf</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Spring Security</span>
+                            </div >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project4')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal"></h3>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>Paisley - News Recognition and Automation System</span>
+                                <a href="https://github.com/sarankirthic/Paisley" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">AI-powered pattern analysis and recommendation engine</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project4"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project4">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">TensorFlow</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project5')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>Kafka Routing Orchestrator</span>
+                                <a href="https://github.com/sarankirthic/kafka-routing-orchestrato" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">Intelligent message routing and orchestration system for distributed architectures</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project5"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project5">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">Apache Kafka</span>
+                                <span class="tech-badge">Java</span>
+                                <span class="tech-badge">Spring Boot</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="project-header p-6 cursor-pointer flex justify-between items-center transition-colors" onclick="toggleProject('project6')">
+                        <div>
+                            <h3 class="text-xl font-semibold text-charcoal"></h3>
+                            <h3 class="text-xl font-semibold text-charcoal flex items-center">
+                                <span>Twitter Clone - Social Media Platform</span>
+                                <a href="https://github.com/sarankirthic/twitter" target="_blank" class="mdi-icon-link">
+                                    {{ render_icon('mdi:arrow-top-right-bold-box-outline', height='20px') }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mt-1">Scalable social networking platform with real-time features</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="icon-project6"></i>
+                    </div>
+                    <div class="project-details hidden p-6 pt-0" id="project6">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">WebSocket</span>
+                                <span class="tech-badge">Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        <hr class="mt-6 mb-6 border-black">
+    </section>
+
+    <!-- Experience Section -->
+    <section class="pb-5 max-w-4xl mx-auto">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-5 inconsolata-title">Experience</h2>
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="experience-card border-l-4 border-teal-600 pl-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-x-2">
+                            <h3 class="text-xl font-semibold text-charcoal">Temperstack</h3>
+                            <p class="text-gray-600 font-medium">Fullstack Engineer</p>
+                        </div>
+                    <span class="text-gray-500">May, 2024 - Oct, 2024</span>
+<!--                    <ul class="list-disc list-inside text-gray-700 space-y-2">-->
+<!--                        <li>Integrated AWS WAF with multi-cloud monitoring systems</li>-->
+<!--                        <li>Developed real-time threat detection and response systems</li>-->
+<!--                        <li>Implemented automated security workflows reducing incident response time by 60%</li>-->
+<!--                    </ul>-->
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-card border-l-4 border-teal-600 pl-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-x-2">
+                            <h3 class="text-xl font-semibold text-charcoal">Cranberry.fit</h3>
+                            <p class="text-gray-600 font-medium">Fullstack Engineer</p>
+                        </div>
+                    <span class="text-gray-500">Oct, 2023 - July, 2025</span>
+                </div>
+<!--                    <ul class="list-disc list-inside text-gray-700 space-y-2">-->
+<!--                        <li>Built Rasa chatbot with WhatsApp integration handling 50,000+ monthly interactions</li>-->
+<!--                        <li>Designed and implemented RESTful APIs for threat intelligence platform</li>-->
+<!--                        <li>Optimized database queries improving system performance by 40%</li>-->
+<!--                    </ul>-->
+                </div>
+            </div>
+        </div>
+        <hr class="mt-6 mb-6 border-black">
+    </section>
+    <!-- Skills Section -->
+    <section class="py-5 max-w-4xl mx-auto relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-charcoal mb-0 inconsolata-title">Skills</h2>
+            <div class="carousel-track">
+                <!-- Tech Stack Slider -->
+                <div class="slide">{{ render_icon('skill-icons:python-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:java-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:flask-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:spring-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:django', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:aws-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:gcp-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:azure-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:docker', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:javascript', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:npm-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:nodejs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:react-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:expressjs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:postgresql-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:redis-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:mongodb', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:github-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:arch-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:ipfs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:html', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:css', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:nginx', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:kafka', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:postman', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:markdown-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:tensorflow-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:linux-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:ubuntu-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:apple-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:git', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:jenkins-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:kali-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:pytorch-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:raspberrypi-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:r-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:opencv-light', height='48px') }}</div>
+
+                <!-- Duplicate icons for seamless looping -->
+                <div class="slide">{{ render_icon('skill-icons:python-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:java-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:flask-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:spring-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:django', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:aws-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:gcp-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:azure-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:docker', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:javascript', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:npm-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:nodejs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:react-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:expressjs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:postgresql-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:redis-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:mongodb', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:github-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:arch-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:ipfs-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:html', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:css', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:nginx', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:kafka', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:postman', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:markdown-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:tensorflow-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:linux-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:ubuntu-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:apple-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:git', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:jenkins-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:kali-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:pytorch-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:raspberrypi-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:r-light', height='48px') }}</div>
+                <div class="slide">{{ render_icon('skill-icons:opencv-light', height='48px') }}</div>
+            </div>
+        </div>
+        <hr class="mt-6 mb-6 border-black">
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-5 max-w-4xl mx-auto">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-charcoal mb-5 inconsolata-title">Education</h2>
+
+            <div class="space-y-8">
+                <div class="education-card p-6 rounded-xl shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-charcoal">Bachelor of Technology in Electronics and Communication Engineering</h3>
+                        <span class="text-gray-500">2019 - 2023</span>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-2">Vellore Institute of Technology</p>
+                    <p class="text-gray-600">Graduated with Honors</p>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mt-8">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6 inconsolata-title">Certifications</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="cert-card p-4 rounded-lg shadow-sm border-l-4 border-amber-900">
+                            <h4 class="font-semibold text-charcoal mb-1">AWS Certified Developer</h4>
+                            <p class="text-gray-600 text-sm">Amazon Web Services</p>
+                        </div>
+                        <div class="cert-card p-4 rounded-lg shadow-sm border-l-4 border-amber-900">
+                            <h4 class="font-semibold text-charcoal mb-1">Python Certified Developer</h4>
+                            <p class="text-gray-600 text-sm">Coursera</p>
+                        </div>
+                        <div class="cert-card p-4 rounded-lg shadow-sm border-l-4 border-amber-900">
+                            <h4 class="font-semibold text-charcoal mb-1">Java Certified Developer</h4>
+                            <p class="text-gray-600 text-sm">GUVI</p>
+                        </div>
+                        <div class="cert-card p-4 rounded-lg shadow-sm border-l-4 border-amber-900">
+                            <h4 class="font-semibold text-charcoal mb-1">Docker Certified Associate</h4>
+                            <p class="text-gray-600 text-sm">Docker Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-charcoal">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2025 Sarankirthic SP. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
