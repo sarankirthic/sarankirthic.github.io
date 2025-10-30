@@ -10,6 +10,11 @@ app.jinja_env.globals.update(render_icon=render_icon)
 
 
 @app.route('/')
+def home():
+    return render_template('index.html', title='redesign')
+
+
+@app.route('/home')
 def testing():
     return render_template('base.html', title='Home')
 

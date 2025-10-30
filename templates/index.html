@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saran Kirthic - Software Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_v5.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-cream">
+
+    <nav class="fixed right-0 top-0 h-screen bg-opacity-50 p-6 flex flex-col justify-center">
+        <ul class="space-y-8">
+            <li><a href="#about" class="nav-link active"><i class="fas fa-home"></i><span class="nav-text">Home</span></a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-cogs"></i><span class="nav-text">Skills</span></a></li>
+            <li><a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i><span class="nav-text">Projects</span></a></li>
+            <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span class="nav-text">Experience</span></a></li>
+            <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span class="nav-text">Certifications</span></a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="container mx-auto px-4">
+        <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center">
+            <h1 class="text-5xl font-bold">Sarankirthic SP</h1>
+            <p class="text-xl mt-4">Full Stack Engineer</p>
+            <p class="mt-2 max-w-xl">
+                I am a full stack engineer specializing in building and designing scalable web applications and distributed systems.
+            </p>
+            <hr class="mt-1 mb-5 border-black">
+            <div class="flex flex-wrap gap-4">
+                <a href="https://github.com/sarankirthic" target="_blank" class="link-github hover:bg-black hover:text-white px-2 py-1 transition-all">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/sarankirthic-sp" target="_blank" class="link-linkedin hover:text-white px-2 py-1 transition-all">
+                    LinkedIn
+                </a>
+                <a href="https://leetcode.com/sarankirthic" target="_blank" class="link-leetcode hover:bg-black hover:text-white px-2 py-1 transition-all">
+                    Leetcode
+                </a>
+                <a href="{{ url_for('static', filename='documents/sarankirthic.pdf') }}" target="_blank" class="link-resume hover:text-white px-2 py-1 transition-all">
+                    Resume
+                </a>
+            </div>
+        </section>
+
+        <section id="skills" class="min-h-screen flex flex-col justify-center items-center">
+            <h2 class="text-4xl font-bold mb-8">Skills</h2>
+            <div class="w-full flex justify-center">
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-12 gap-y-10">
+                    <!-- Languages -->
+                    <div class="skill-item">{{ render_icon('skill-icons:java-light', height='48px') }}<p>Java</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:python-light', height='48px') }}<p>Python</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:kotlin-light', height='48px') }}<p>Kotlin</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:rust', height='48px') }}<p>Rust</p></div>
+
+                    <!-- Frontend -->
+                    <div class="skill-item">{{ render_icon('skill-icons:html', height='48px') }}<p>HTML</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:css', height='48px') }}<p>CSS</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:javascript', height='48px') }}<p>JavaScript</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:typescript', height='48px') }}<p>Typescript</p></div>
+
+                    <!-- Backend -->
+                    <div class="skill-item">{{ render_icon('skill-icons:spring-light', height='48px') }}<p>Springboot</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:fastapi', height='48px') }}<p>RestApi</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:flask-light', height='48px') }}<p>Flask</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:django', height='48px') }}<p>Django</p></div>
+
+                    <!-- Database -->
+                    <div class="skill-item">{{ render_icon('skill-icons:mysql-light', height='48px') }}<p>MYSQL</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:sqlite', height='48px') }}<p>SQLite</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:postgresql-light', height='48px') }}<p>Postgres</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:mongodb', height='48px') }}<p>Mongodb</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:dynamodb-dark', height='48px') }}<p>Dynamodb</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:redis-light', height='48px') }}<p>Redis</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:kafka', height='48px') }}<p>Kafka</p></div>
+
+                    <!-- Tools and Devops -->
+                    <div class="skill-item">{{ render_icon('skill-icons:git', height='48px') }}<p>Git</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:docker', height='48px') }}<p>Docker</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:jenkins-light', height='48px') }}<p>Jenkins</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:aws-light', height='48px') }}<p>AWS</p></div>
+                    <div class="skill-item">{{ render_icon('skill-icons:azure-light', height='48px') }}<p>Azure</p></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="projects" class="min-h-screen flex flex-col justify-center items-center">
+            <h2 class="text-4xl font-bold mb-8">Projects</h2>
+            <div class="w-full max-w-2xl space-y-4">
+                 <div class="project-item">
+                    <div class="project-header">
+                        <h3>Data Analytics Platform</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Python, Flask, Pandas, AWS</p>
+                        <p>An end-to-end data analytics platform for processing and visualizing large datasets.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>E-commerce Website</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Java, Spring Boot, MySQL, Thymeleaf</p>
+                        <p>A full-featured e-commerce website with user authentication, product catalog, and shopping cart.</p>
+                    </div>
+                </div>
+                 <div class="project-item">
+                    <div class="project-header">
+                        <h3>Learning Management System</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Java, Spring Boot, MySQL, Thymeleaf</p>
+                        <p>A comprehensive Learning Management System for educational institutions.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>Paisley</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Python, Flask, PostgreSQL</p>
+                        <p>A web application for artists to showcase their work and connect with other artists.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>Kafka Routing Orchestrator</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Python, Kafka, Flask, PostgreSQL, Redis</p>
+                        <p>A real-time routing orchestrator for a contact center using Kafka.</p>
+                    </div>
+                </div>
+                 <div class="project-item">
+                    <div class="project-header">
+                        <h3>Twitter Clone</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="project-details">
+                        <p><strong>Tech Stack:</strong> Java, Spring Boot, MySQL, Thymeleaf</p>
+                        <p>A simplified clone of Twitter with basic functionalities like tweets, follows, and timelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="min-h-screen flex flex-col justify-center items-center">
+            <h2 class="text-4xl font-bold mb-8">Experience & Education</h2>
+            <div class="w-full max-w-2xl">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold">Temperstack</h3>
+                    <p class="text-lg">Full Stack Engineer | May 2024 - October 2024</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Developed and maintained web applications using Python, Flask, and Django.</li>
+                        <li>Shipped AWS WAF–backed real-time detection across 10+ services.</li>
+                        <li>Built high-throughput Kafka-driven pipelines.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold">Cranberry.fit</h3>
+                    <p class="text-lg">Full Stack Engineer | October 2024 - Present</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Developed and maintained web applications using Python, Flask, and Django.</li>
+                        <li>Shipped AWS WAF–backed real-time detection across 10+ services.</li>
+                        <li>Built high-throughput Kafka-driven pipelines.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="min-h-screen flex flex-col justify-center items-center">
+            <h2 class="text-4xl font-bold mb-8">Certifications</h2>
+            <div class="carousel-container w-full relative overflow-hidden">
+                <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/aws.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>AWS Certified Developer</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/git.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>GIT Certified Developer</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/frontend.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>HTML & CSS Certified</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/java.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>Java Certified Developer</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/javascript.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>Javascript Certified Developer</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full flex flex-col items-center justify-center text-center">
+                        <img src="{{ url_for('static', filename='images/certifications/python_coursera.png') }}" alt="AWS Certified Developer" class="mb-4">
+                        <p>Python Certified Developer</p>
+                    </div>
+                </div>
+                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 ml-4">&lt;</button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 mr-4">&gt;</button>
+            </div>
+        </section>
+
+        <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="max-w-xl mb-6">I'm currently available for freelance projects and consulting opportunities. Feel free to reach out if you'd like to work together.</p>
+            <a href="mailto:sarankirthic@gmail.com" class="contact-button">
+                <i class="fas fa-envelope"></i> Email Me
+            </a>
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script_v5.js') }}"></script>
+</body>
+</html>
