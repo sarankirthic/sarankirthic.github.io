@@ -1,9 +1,8 @@
 from flask import Flask, render_template
 from waitress import serve
 from utils.icons import render_icon
-# from flask import request, redirect, flash, url_for
-# from flask_mail import Mail, Message
-# from config import Config
+
+from resources import about, projects, experience, skills, education, certifications
 
 app = Flask(__name__)
 app.jinja_env.globals.update(render_icon=render_icon)
@@ -11,7 +10,16 @@ app.jinja_env.globals.update(render_icon=render_icon)
 
 @app.route('/')
 def testing():
-    return render_template('base.html', title='Home')
+    return render_template(
+        'base.html',
+        title='Home',
+        about=about.ABOUT,
+        projects=projects.PROJECTS,
+        experience=experience.EXPERIENCE,
+        skills=skills.SKILLS,
+        education=education.EDUCATION,
+        certifications=certifications.CERTIFICATIONS
+    )
 
 
 @app.route('/secret')
